@@ -1,0 +1,61 @@
+.body {
+  background-image: url(../../assets/paymentTitle.png);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  padding: 5rem 8rem;
+}
+
+.body h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+
+  text-align: center;
+
+  color: var(--main-color-dark-gray);
+}
+
+.dataMap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.dataMap div{
+  text-align: center;
+}
+
+.dataMap h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 110%;
+
+  text-align: center;
+
+  color: var(--main-color-dark-gray);
+}
+
+@media screen and (max-width:1000.9px) {
+  .body{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .dataMap{
+    flex-direction: column;
+  }
+  .body h1{
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+
+@media (min-width:1001px) and (max-width:1400px) {
+  .body{
+    padding: 2rem 4rem;
+  }
+}

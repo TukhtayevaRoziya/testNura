@@ -7,10 +7,6 @@
 }
 
 .container {
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +25,7 @@
 }
 
 .links_list__wrapper .list {
-  margin-left: 50px;
+  margin-left: 40px;
   font-weight: 400;
   font-size: 16px;
 }
@@ -52,7 +48,6 @@
 
 @media screen and (max-width: 1024px) {
   .container {
-    position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
@@ -164,7 +159,7 @@
 }
 
 .backgroundText {
-  padding: 30vh 8rem 0;
+  padding: 12vh 8rem 0;
   display: flex;
   justify-content: space-between;
 }
@@ -175,7 +170,6 @@
 
 .backgroundText__2 {
   width: 25%;
-  font-family: "Fira Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -185,8 +179,6 @@
 }
 
 .backgroundText h1 {
-  font-family: "Fira Sans", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 34px;
   line-height: 140%;
@@ -196,12 +188,10 @@
 }
 
 .backgroundText button {
-  font-family: "Fira Sans", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 140%;
-  color: #333333;
+  color: var(--main-color-dark-gray);
   background: #dba069;
   padding: 20px 30px;
   border: none;
@@ -211,8 +201,6 @@
 }
 
 .backgroundText h2 {
-  font-family: "Fira Sans", sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 38px;
@@ -222,8 +210,6 @@
 }
 
 .backgroundText h3 {
-  font-family: "Fira Sans", sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 120px;
   line-height: 83.7%;
@@ -239,7 +225,6 @@
 
 .backgroundText__endText p {
   width: 120px;
-  font-family: "Fira Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -253,7 +238,7 @@
   margin-right: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000.9px) {
   .myNavbar {
     height: 70vh;
   }
@@ -339,7 +324,7 @@
   }
 
   .backgroundText {
-    padding: 25vh 0 0 0;
+    padding: 2vh 0 0 0;
     flex-direction: column;
   }
 
@@ -377,5 +362,36 @@
   }
   .backgroundText .backgroundText__endText{
     justify-content: center;
+  }
+}
+
+@media (min-width: 1001px) and (max-width:1400px) {
+  .container{
+    padding: 0 4rem;
+    margin: 0;
+  }
+
+  .backgroundText{
+    padding: 12vh 4rem 0;
+  }
+  .links_list__wrapper .list{
+    margin-left: 22px;
+  }
+
+  .links{
+    width: 80%;
+  }
+  .backgroundText h1{
+    font-size: 20px;
+  }
+  .backgroundText__1{
+    width: 60%;
+
+  }
+  .backgroundText__2{
+    width: 30%;
+  }
+  .backgroundText h3{
+    font-size: 100px;
   }
 }

@@ -1,0 +1,83 @@
+.body {
+  background-image: url(../../assets/teach.png);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  margin: 1rem;
+  padding: 3rem 8rem;
+}
+
+.body h1 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+
+  text-align: center;
+
+  color: var(--main-color-dark-gray);
+}
+.mapWrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.map {
+  width: 48%;
+  margin: 2rem 0;
+}
+
+.map img{
+  object-fit: contain;
+}
+
+.map h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: var(--main-color-dark-gray);
+}
+
+.map p {
+  width: 90%;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: var(--main-color-dark-gray);
+}
+
+@media screen and (max-width:1000.9px) {
+  .body{
+    padding: 0;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .body h1{
+    font-size: 30px;
+    line-height: 40px;
+  }
+  
+  .mapWrap{
+    flex-direction: column;
+  }
+
+  .map{
+    width:100%;
+    text-align: center;
+  }
+
+  .map p{
+    width: 100%;
+  }
+}
+
+@media (min-width:1001px) and (max-width:1400px) {
+  .body{
+    padding: 4rem;
+  }
+}
