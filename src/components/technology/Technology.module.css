@@ -50,7 +50,7 @@
   color: var(--main-color-dark-gray);
 }
 
-@media screen and (max-width:1000.9px) {
+@media screen and (max-width:600.9px) {
   .body{
     padding: 0;
     width: 80%;
@@ -78,6 +78,27 @@
   .map img{
     width: 90%;
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width:1000.9px) {
+  .body{
+    padding: 1rem 0;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .map img{
+    width: 70%;
+  }
+
+  .map{
+    text-align: center;
+  }
+
+  .map p,
+  .map h1  {
+    text-align: left;
   }
 }
 
