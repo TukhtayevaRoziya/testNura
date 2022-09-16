@@ -65,7 +65,7 @@
 @media screen and (max-width: 1000.9px){
   .body{
     flex-direction: column;
-    padding: 0 0 3rem;
+    padding: 0 ;
   }
 
   .body__1{

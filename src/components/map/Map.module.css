@@ -56,15 +56,41 @@
 @media screen and (max-width:1000.9px) {
   .body{
     flex-direction: column-reverse;
-    padding: 1rem 4rem;
+    padding: 1rem 0;
+    width: 80%;
+    margin: 0 auto;
   }
   .body__main{
     width: 100%;
     margin-bottom: 1rem;
   }
 
+  .body__main p{
+    display: none;
+  }
+
+  .body__main h1{
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+  }
+
   .yandex{
     width: 100%;
+  }
+
+  .dataMap__wrap{
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .dataMap{
+    width: 100%;
+    text-align: center;
+  }
+
+  .dataMap__wrap img{
+    display: none;
   }
 }
 

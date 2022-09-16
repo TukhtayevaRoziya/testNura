@@ -74,6 +74,11 @@
   .map p{
     width: 100%;
   }
+
+  .map img{
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width:1001px) and (max-width:1400px) {
