@@ -101,6 +101,12 @@
   }
 }
 
+@media (min-width:751px) and (max-width:1000.9px) {
+  .body__2 img{
+    width: 400px;
+  }
+}
+
 @media (min-width: 1001px) and (max-width:1400px) {
   .body{
     padding: 1rem 0 4rem 4rem;

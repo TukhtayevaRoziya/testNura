@@ -61,6 +61,13 @@
   }
 }
 
+@media (min-width:751px) and (max-width:1000.9px) {
+  
+  .body img {
+    width: 400px;
+  }
+}
+
 @media (min-width: 1001px) and (max-width: 1400.9px) {
   .body__1 {
     width: 60%;
