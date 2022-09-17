@@ -8,7 +8,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
 
-  const [styles, setStyles] = useState(true)
+  const [styles, setStyles] = useState(false)
 
   const onClick = () =>{
     setStyles(!styles)
