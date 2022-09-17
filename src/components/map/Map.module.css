@@ -27,13 +27,14 @@
   margin: 1rem 0;
 }
 
-.body__main h2 {
+.body__main h2 a{
   font-weight: 300;
   font-size: 18px;
   line-height: 22px;
 
   color: var(--main-color-dark-gray);
   margin: .5rem 0;
+  text-decoration: none;
 }
 
 .dataMap__wrap{

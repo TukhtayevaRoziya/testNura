@@ -9,14 +9,18 @@ import Yandex from "./Yendex";
 
 const Map = () => {
   const data = [
-    { id: 0, component: <BsTelephone />, text: "+7 (700) 001-18-88" },
-    { id: 1, component: <TbMessageDots />, text: "info@nuramm.kz" },
-    { id: 1, component: <AiOutlineInstagram />, text: "@nura.premier" },
+    { id: 0, component: <BsTelephone />, text: "+7 (700) 001-18-88", href:'tel:+77000011888' },
+    { id: 1, component: <TbMessageDots />, text: "info@nuramm.kz", href:'mailto:' },
+    { id: 1, component: <AiOutlineInstagram />, text: "@nura.premier", href:'https://www.instagram.com/' },
   ];
 
   const dataMap = data.map((d) => (
     <h2 key={d.id}>
-      {d.component} {d.text}
+      {d.component} 
+      
+     <a href={d.href}>{d.text}</a> 
+
+      
     </h2>
   ));
   return (

@@ -27,7 +27,7 @@ const Navbar = () => {
               </div>
             </div>
             <li className="list">
-              <a href="/home">О проекте</a>
+              <a href="/#project">О проекте</a>
               <div className="home_underline"></div>
             </li>
             <li className="list">
