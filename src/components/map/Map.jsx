@@ -24,7 +24,7 @@ const Map = () => {
     </h2>
   ));
   return (
-    <div className={styles.body}>
+    <div className={styles.body} id='contact'>
       <div className={styles.yandex}>
         <Yandex />
       </div>

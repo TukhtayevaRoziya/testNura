@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import logo from "../../assets/logo.png";
 
@@ -7,10 +7,16 @@ import { BsWhatsapp, BsFillTelephoneFill } from "react-icons/bs";
 import "./Navbar.css";
 
 const Navbar = () => {
+
+  const [styles, setStyles] = useState(true)
+
+  const onClick = () =>{
+    setStyles(!styles)
+  }
   return (
     <div className="myNavbar">
       <nav className="container">
-        <input id="nav_toggle" type="checkbox" />
+        <input id="nav_toggle" type="checkbox" checked={styles}/>
         {/* -----------logo----------- */}
         <div className="logo">
           <img src={logo} alt="" />
@@ -18,7 +24,7 @@ const Navbar = () => {
 
         {/* -----------main section----------- */}
 
-        <ul className="links">
+        <ul className={"links " + styles}>
           <div className="links_list__wrapper">
             <div className="links_list__wrapper__firstLine">
               <BsWhatsapp />
@@ -27,27 +33,27 @@ const Navbar = () => {
               </div>
             </div>
             <li className="list">
-              <a href="/#project">О проекте</a>
+              <a onClick={onClick} href="/#project">О проекте</a>
               <div className="home_underline"></div>
             </li>
             <li className="list">
-              <a href="/produc">Локация</a>
+              <a onClick={onClick} href="/#location">Локация</a>
               <div className="home_underline"></div>
             </li>
             <li className="list">
-              <a href="/">Преимущества</a>
+              <a onClick={onClick} href="/#advantages">Преимущества</a>
               <div className="home_underline"></div>
             </li>
             <li className="list">
-              <a href="/">Почему мы?</a>
+              <a onClick={onClick} href="/#whyWe">Почему мы?</a>
               <div className="home_underline"></div>
             </li>
             <li className="list">
-              <a href="/">Способы оплаты</a>
+              <a onClick={onClick} href="/#paymentMethods">Способы оплаты</a>
               <div className="home_underline"></div>
             </li>
             <li className="list">
-              <a href="/">Контакты</a>
+              <a onClick={onClick} href="/#contact">Контакты</a>
               <div className="home_underline"></div>
             </li>
           </div>
@@ -55,7 +61,7 @@ const Navbar = () => {
 
         {/* -----------toggle butoon----------- */}
 
-        <label htmlFor="nav_toggle" className="icon_burger">
+        <label  onClick={onClick} htmlFor="nav_toggle" className="icon_burger">
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>

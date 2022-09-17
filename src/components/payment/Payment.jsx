@@ -21,7 +21,7 @@ const Payment = () => {
   </div>)
   
   return (
-    <div className={styles.body}>
+    <div className={styles.body} id='paymentMethods'>
       <h1>Способы оплаты</h1>
       <div className={styles.dataMap}>
         {dataMap}

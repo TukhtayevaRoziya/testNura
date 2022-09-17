@@ -5,7 +5,7 @@ import styles from "./Location.module.css";
 
 const Location = () => {
   return (
-    <div className={styles.body}>
+    <div className={styles.body} id='location'>
       <div className={styles.body__1}>
         <h1>Локация</h1>
         <p>

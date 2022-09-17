@@ -239,6 +239,9 @@
 }
 
 @media screen and (max-width: 1000.9px) {
+  .container .links.left{
+    left: 100% !important;
+  }
   .myNavbar {
     height: 70vh;
   }

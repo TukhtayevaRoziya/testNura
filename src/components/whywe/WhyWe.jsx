@@ -47,7 +47,7 @@ const WhyWe = () => {
   ));
   
   return (
-    <div className={styles.body}>
+    <div className={styles.body} id='whyWe'>
       <h1>Почему NURA ELITE?</h1>
       <div className={styles.body__wrap}>
         <img src={img} alt="" />

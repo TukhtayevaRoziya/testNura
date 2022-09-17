@@ -47,7 +47,7 @@ const City = () => {
 
 
   return (
-    <div className={styles.body}>
+    <div className={styles.body} id='advantages'>
       <h1>Основные преимущества городка</h1>
       <div className={styles.mapDiv__wrap}>{dataMap}</div>
       <img src={city} alt="" />
