@@ -27,7 +27,8 @@
   margin: 1rem 0;
 }
 
-.body__main h2 a{
+.body__main h2 a,
+.body__main h2{
   font-weight: 300;
   font-size: 18px;
   line-height: 22px;
@@ -35,6 +36,7 @@
   color: var(--main-color-dark-gray);
   margin: .5rem 0;
   text-decoration: none;
+  padding-left: .5rem;
 }
 
 .dataMap__wrap{
