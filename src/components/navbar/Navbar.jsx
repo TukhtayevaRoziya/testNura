@@ -3,7 +3,7 @@ import { BsWhatsapp, BsFillTelephoneFill } from 'react-icons/bs'
 
 import { navbarData } from '../../_utils/dataMaps'
 
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logo.webp'
 
 import './Navbar.css'
 

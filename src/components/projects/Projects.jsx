@@ -2,7 +2,7 @@ import React from 'react'
 
 import { projectsDataMap } from '../../_utils/dataMaps'
 
-import mmGroup from '../../assets/mmgroup.png'
+import mmGroup from '../../assets/mmgroup.webp'
 
 import styles from './Projects.module.css'
 

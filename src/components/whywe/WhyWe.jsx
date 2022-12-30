@@ -2,7 +2,7 @@ import React from 'react'
 
 import { whyWeDataMap } from '../../_utils/dataMaps'
 
-import img from '../../assets/whyweImg.png'
+import img from '../../assets/whyweImg.webp'
 
 import styles from './WhyWe.module.css'
 

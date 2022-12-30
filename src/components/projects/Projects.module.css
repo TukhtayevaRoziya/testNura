@@ -1,5 +1,5 @@
 .body {
-  background-image: url(../../assets/projectTitle.png);
+  background-image: url(../../assets/projectTitle.webp);
   background-repeat: no-repeat;
   background-size: 1375px 312px;
   background-position: top right;
@@ -47,7 +47,7 @@
 
 .body__2{
   width: 45%;
-  background-image: url(../../assets/mmgroupBack.png);
+  background-image: url(../../assets/mmgroupBack.webp);
   background-repeat: no-repeat;
   background-size: auto 630px;
   background-position: top right;

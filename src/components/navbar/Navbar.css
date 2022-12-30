@@ -1,7 +1,7 @@
 .myNavbar {
   height: 93vh;
   background-color: aqua;
-  background-image: url(../../assets/background.png);
+  background-image: url(../../assets/background.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }

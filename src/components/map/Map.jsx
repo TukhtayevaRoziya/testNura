@@ -3,7 +3,7 @@ import React from 'react'
 import { mapDataMap } from '../../_utils/dataMaps'
 import Yandex from './Yendex'
 
-import img from '../../assets/qr.png'
+import img from '../../assets/qr.webp'
 
 import styles from './Map.module.css'
 

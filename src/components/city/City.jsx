@@ -2,7 +2,7 @@ import React from 'react'
 import { TbBuildingCommunity } from 'react-icons/tb'
 import { cityDataMap, cityDataMap2 } from '../../_utils/dataMaps'
 
-import city from '../../assets/city.png'
+import city from '../../assets/city.webp'
 
 import styles from './City.module.css'
 
