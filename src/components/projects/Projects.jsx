@@ -1,36 +1,25 @@
-import React from "react";
-import mmGroup from "../../assets/mmgroup.png";
-import styles from "./Projects.module.css";
+import React from 'react'
+
+import { projectsDataMap } from '../../_utils/dataMaps'
+
+import mmGroup from '../../assets/mmgroup.png'
+
+import styles from './Projects.module.css'
 
 const Projects = () => {
-  const data =[
-    {id:0, title:'О компании', text:'“MM Group” Группа Строительных Компании – современная и динамично развивающаяся группа компаний, оказывающая широкий спектр услуг в строительном бизнесе от проектирования до сдачи объектов под ключ. Свою деятельность в строительном бизнесе начала осуществлять с 2013 года и прочно зарекомендовала себя надежной Казахстанской строительной компанией не только на территории Республики Казахстан, но и за рубежом. Учредителем и генеральным директором группы строительных компаний «MM Group» является - Мольдир Суюншали.'},
-    {id:1, title:'Миссия', text:'Приоритетом группы строительных компаний «MM Group» является профессиональный подход с применением инновационных решении в строительстве воздвигаемых объектов, опытный коллектив, качественные материалы и своевременность сдачи объектов с доступной возможностью приобретения не только жилья, но и других объектов недвижимости.'},
-  ]
-
-  const dataMap = data.map((d) => (
-    <React.Fragment key={d.id}>
-      <h2>{d.title}</h2>
-      <p>{d.text}</p>
-    </React.Fragment>
-  ));
-  
   return (
-    <div className={styles.body} id='project'>
+    <div className={styles.body} id="project">
       <div className={styles.body__1}>
         <h1>О проекте</h1>
 
         <p className={styles.body__1__first_p}>
           Элитный закрытый коттеджный городок в г. Нур-Султан состоящий из:
-          <br />
-          <br />
+          <br /> <br />
           <strong>36 коттеджей:</strong> <br />
           - 368 м2 на 10 сотках
           <br /> - 179 м2 на 5 сотках
         </p>
-
-        
-        {dataMap}
+        {projectsDataMap}
       </div>
       <div className={styles.body__2}>
         <img src={mmGroup} alt="" />
@@ -42,7 +31,7 @@ const Projects = () => {
         </p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

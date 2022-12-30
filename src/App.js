@@ -9,8 +9,6 @@ import Download from './components/download/Download';
 import Technology from './components/technology/Technology';
 import EndSection from './components/endSection/EndSection';
 
-import './App.css';
-
 function App() {
   return (
     <div className="App">

@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
+import { BsWhatsapp, BsFillTelephoneFill } from 'react-icons/bs'
 
-import logo from "../../assets/logo.png";
+import { navbarData } from '../../_utils/dataMaps'
 
-import { BsWhatsapp, BsFillTelephoneFill } from "react-icons/bs";
+import logo from '../../assets/logo.png'
 
-import "./Navbar.css";
+import './Navbar.css'
 
 const Navbar = () => {
-
   const [styles, setStyles] = useState(false)
 
-  const onClick = () =>{
+  const onClick = () => {
     setStyles(!styles)
   }
+
+  const navbarDataMap = navbarData.map((n) => (
+    <li className="list" key={n.id}>
+      <a onClick={onClick} href={'/#' + n.href}>
+        {n.title}
+      </a>
+      <div className="home_underline"></div>
+    </li>
+  ))
   return (
     <div className="myNavbar">
       <nav className="container">
-        <input id="nav_toggle" type="checkbox" checked={styles}/>
+        <input id="nav_toggle" type="checkbox" readOnly checked={styles} />
         {/* -----------logo----------- */}
         <div className="logo">
           <img src={logo} alt="" />
@@ -24,7 +33,7 @@ const Navbar = () => {
 
         {/* -----------main section----------- */}
 
-        <ul className={"links " + styles}>
+        <ul className={'links ' + styles}>
           <div className="links_list__wrapper">
             <div className="links_list__wrapper__firstLine">
               <BsWhatsapp />
@@ -32,36 +41,13 @@ const Navbar = () => {
                 <BsFillTelephoneFill /> +7 700 001 18 88
               </div>
             </div>
-            <li className="list">
-              <a onClick={onClick} href="/#project">О проекте</a>
-              <div className="home_underline"></div>
-            </li>
-            <li className="list">
-              <a onClick={onClick} href="/#location">Локация</a>
-              <div className="home_underline"></div>
-            </li>
-            <li className="list">
-              <a onClick={onClick} href="/#advantages">Преимущества</a>
-              <div className="home_underline"></div>
-            </li>
-            <li className="list">
-              <a onClick={onClick} href="/#whyWe">Почему мы?</a>
-              <div className="home_underline"></div>
-            </li>
-            <li className="list">
-              <a onClick={onClick} href="/#paymentMethods">Способы оплаты</a>
-              <div className="home_underline"></div>
-            </li>
-            <li className="list">
-              <a onClick={onClick} href="/#contact">Контакты</a>
-              <div className="home_underline"></div>
-            </li>
+            {navbarDataMap}
           </div>
         </ul>
 
         {/* -----------toggle butoon----------- */}
 
-        <label  onClick={onClick} htmlFor="nav_toggle" className="icon_burger">
+        <label onClick={onClick} htmlFor="nav_toggle" className="icon_burger">
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>
@@ -77,6 +63,7 @@ const Navbar = () => {
             <p className="backgroundText__endText__1">
               коттеджа 368 м2 на 10 сотках
             </p>
+            
             <h3>33</h3>
             <p>коттеджа 179 м2 на 5 сотках</p>
           </div>
@@ -84,20 +71,18 @@ const Navbar = () => {
         <h5 className="backgroundText__2">
           <strong>Строительные работы </strong>
           начались в сентября 2021 года.
-          <br/>
-          <br/>
 
+          <br /> <br />
           <strong>Срок сдачи </strong>
           коттеджей - I квартал 2022 года
-          <br/>
-          <br/>
-
+          
+          <br /> <br />
           <strong>Срок сдачи </strong>
           всего коттеджного городка - II квартал 2022 года
         </h5>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
