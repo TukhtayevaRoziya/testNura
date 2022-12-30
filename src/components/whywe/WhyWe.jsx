@@ -11,7 +11,7 @@ const WhyWe = () => {
     <div className={styles.body} id="whyWe">
       <h1>Почему NURA ELITE?</h1>
       <div className={styles.body__wrap}>
-        <img src={img} alt="" />
+        <amp-img layout="responsive" src={img} alt="" />
         <div className={styles.mapDiv__wrap}>{whyWeDataMap}</div>
       </div>
     </div>
