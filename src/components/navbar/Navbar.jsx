@@ -47,7 +47,7 @@ const Navbar = () => {
 
         {/* -----------toggle butoon----------- */}
 
-        <label onClick={onClick} htmlFor="nav_toggle" className="icon_burger">
+        <label onClick={onClick} data-testid='label' htmlFor="nav_toggle" className="icon_burger">
           <div className="line"></div>
           <div className="line"></div>
           <div className="line"></div>
