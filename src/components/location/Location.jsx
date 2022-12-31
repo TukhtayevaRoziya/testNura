@@ -18,9 +18,10 @@ const Location = () => {
           семейной жизни в гармонии с природой, без городского шума с удобной
           транспортной развязкой.
         </p>
+        <div className={styles.dotted}></div>
       </div>
       <div>
-        <img src={img} alt=''/>
+        <img src={img} alt='' draggable={false}/>
       </div>
     </div>
   );

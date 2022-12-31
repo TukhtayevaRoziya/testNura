@@ -22,7 +22,7 @@ const Projects = () => {
         {projectsDataMap}
       </div>
       <div className={styles.body__2}>
-        <img src={mmGroup} alt="" />
+        <img src={mmGroup} alt="" draggable={false} />
         <h2>Цель</h2>
         <p>
           Укрепление статуса компании, которая способна обеспечить потребителя

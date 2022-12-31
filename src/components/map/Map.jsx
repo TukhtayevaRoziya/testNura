@@ -18,7 +18,7 @@ const Map = () => {
         <p>ул. Кунаева 10, БЦ “Изумрудный”, блок - А, этаж 1</p>
         <div className={styles.dataMap__wrap}>
           <div className={styles.dataMap}>{mapDataMap}</div>
-          <img src={img} alt="" />
+          <img src={img} alt="" draggable={false} />
         </div>
       </div>
     </div>

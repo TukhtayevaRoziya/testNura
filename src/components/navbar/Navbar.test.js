@@ -8,7 +8,7 @@ describe('navbar', () => {
     const {getByRole, getByTestId} = render(<Navbar/>)
 
     expect(getByRole('checkbox').checked).toEqual(false)
-
+ 
     userEvent.click(getByTestId('label'))
     expect(getByRole('checkbox').checked).toEqual(true)
 

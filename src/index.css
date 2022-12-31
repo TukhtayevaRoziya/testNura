@@ -1,1 +1,1 @@
-body{margin:0;padding:0;font-family:"Fira Sans",sans-serif}:root{--main-color-dark-blue:#2e363e;--main-color-dark-gray:#333}
+body{overflow-x: hidden;margin:0;padding:0;font-family:"Fira Sans",sans-serif}:root{--main-color-dark-blue:#2e363e;--main-color-dark-gray:#333}::-webkit-scrollbar-thumb {background: linear-gradient(180deg,#ffffff,#842231);border-radius: 3px;}::-webkit-scrollbar {background-color: #fff;height: 10px;width: 8px;}

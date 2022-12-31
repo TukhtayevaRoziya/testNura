@@ -28,7 +28,7 @@ const Navbar = () => {
         <input id="nav_toggle" type="checkbox" readOnly checked={styles} />
         {/* -----------logo----------- */}
         <div className="logo">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" draggable={false} />
         </div>
 
         {/* -----------main section----------- */}
@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className="backgroundText">
         <div className="backgroundText__1">
           <h1>Элитный коттеджный городок в г. Нур-Султан</h1>
-          <button>Скачать презентацию</button>
+          <a href='/#pres'>Скачать презентацию</a>
           <h2>36 коттеджей</h2>
           <div className="backgroundText__endText">
             <h3>3</h3>

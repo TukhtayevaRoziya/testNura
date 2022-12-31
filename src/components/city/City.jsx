@@ -11,7 +11,7 @@ const City = () => {
     <div className={styles.body} id="advantages">
       <h1>Основные преимущества городка</h1>
       <div className={styles.mapDiv__wrap}>{cityDataMap}</div>
-      <img src={city} alt="" />
+      <img src={city} alt="" draggable={false} />
       <div className={styles.mapDiv__wrap}>{cityDataMap2}</div>
       <div className={styles.mapDiv + ' ' + styles.mapDiv2}>
         <h2>

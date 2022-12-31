@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   AiOutlineHome,
   AiOutlineInstagram,
@@ -6,9 +7,12 @@ import {
 import { MdAppSettingsAlt, MdFence } from 'react-icons/md'
 import { TbMessageDots } from 'react-icons/tb'
 import { BsTelephone } from 'react-icons/bs'
+import { IoIosWater } from 'react-icons/io'
+import { SiElectron } from 'react-icons/si'
 import { FiUser } from 'react-icons/fi'
 import { GiSofa } from 'react-icons/gi'
 import { FaMap } from 'react-icons/fa'
+import { TiLeaf } from 'react-icons/ti'
 
 import i1 from '../assets/bank.webp'
 import i2 from '../assets/0.webp'
@@ -23,10 +27,6 @@ import t_i5 from '../assets/technical5.webp'
 import t_i6 from '../assets/technical6.webp'
 
 import styles from './dataMap.module.css'
-import React from 'react'
-import { IoIosWater } from 'react-icons/io'
-import { TiLeaf } from 'react-icons/ti'
-import { SiElectron } from 'react-icons/si'
 
 // City
 const cityData = [
@@ -147,7 +147,7 @@ const paymentData = [
 
 export const paymentDataMap = paymentData.map((d) => (
   <div key={d.id}>
-    <img src={d.img} alt="" />
+    <img src={d.img} alt="" draggable={false} />
     <h1>{d.title}</h1>
   </div>
 ))
@@ -223,7 +223,7 @@ const technologyData = [
 
 export const technologyDataMap = technologyData.map((d) => (
   <div key={d.id} className={styles.map}>
-    <img src={d.img} alt="" />
+    <img src={d.img} alt="" draggable={false} />
     <h2>{d.title}</h2>
     <p>{d.text}</p>
   </div>
