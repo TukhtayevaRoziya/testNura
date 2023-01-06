@@ -27,6 +27,9 @@ import t_i5 from '../assets/technical5.webp'
 import t_i6 from '../assets/technical6.webp'
 
 import styles from './dataMap.module.css'
+import { createAction } from './../components/redux/api'
+import { CREATE_USER } from '../components/redux/sendReducer'
+import { useDispatch } from 'react-redux'
 
 // City
 const cityData = [
@@ -81,7 +84,7 @@ export const downloadData = [
     component: <BsTelephone />,
     placeholder: 'Номер телефона',
     getValue: '',
-    type: 'tel'
+    type: 'tel',
   },
 ]
 
@@ -95,19 +98,32 @@ export const DownloadDataMap = () => {
     return (
       <div className={styles.inps__1} key={d.id}>
         {d.component}
-        <input type={d.type || 'text'} inputMode={d.type} placeholder={d.placeholder} onChange={onChangeInp} />
+        <input
+          type={d.type || 'text'}
+          inputMode={d.type}
+          placeholder={d.placeholder}
+          onChange={onChangeInp}
+        />
       </div>
     )
   })
-  const getValues = ()=>{
-    console.log(downloadData[0].getValue)
-    console.log(downloadData[1].getValue)
+  const dispatch = useDispatch()
+
+  const getValues = () => {
+    const data = {
+      name: downloadData[0].getValue,
+      tel: downloadData[1].getValue,
+    }
+    dispatch(createAction('/', CREATE_USER, data))
+    console.log(data)
   }
 
   return (
     <>
       {downloadDataM}
-      <div onClick={getValues} className={styles.btn}>Отправить</div>
+      <div onClick={getValues} className={styles.btn}>
+        Отправить
+      </div>
     </>
   )
 }

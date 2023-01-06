@@ -1,11 +1,10 @@
 import React from 'react'
 
-import { downloadData, DownloadDataMap } from '../../_utils/dataMaps'
+import { DownloadDataMap } from '../../_utils/dataMaps'
 
 import styles from './Download.module.css'
 
 const Download = () => {
-  console.log(downloadData)
   return (
     <div className={styles.wrap} id="pres">
       <div className={styles.body}>
