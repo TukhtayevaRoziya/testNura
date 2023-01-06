@@ -116,6 +116,17 @@
   color: #7e868e;
 }
 
+.btn {
+  background: #842231;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 700.9px) {
   .cityMapDiv {
     width: 80%;
@@ -204,5 +215,8 @@
 @media screen and (max-width: 1100.9px) {
   .inps__1 {
     margin-bottom: 1rem;
+  }
+  .btn {
+    padding: 1.5rem 0;
   }
 }

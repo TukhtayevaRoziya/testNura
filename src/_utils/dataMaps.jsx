@@ -69,26 +69,48 @@ export const cityDataMap2 = cityData2.map((d) => (
 
 // download
 
-const downloadData = [
-  { id: 0, component: <FiUser />, placeholder: 'Ваше имя' },
-  { id: 1, component: <BsTelephone />, placeholder: 'Номер телефона' },
+export const downloadData = [
+  {
+    id: 0,
+    component: <FiUser />,
+    placeholder: 'Ваше имя',
+    getValue: '',
+  },
+  {
+    id: 1,
+    component: <BsTelephone />,
+    placeholder: 'Номер телефона',
+    getValue: '',
+    type: 'tel'
+  },
 ]
 
 // eslint-disable-next-line no-unused-vars
 
-export const downloadDataMap = downloadData.map((d) => {
-  const onChangeInp = (e) => {
-    let firstInpValue
-    firstInpValue = e.target.value
-    console.log(firstInpValue)
+export const DownloadDataMap = () => {
+  const downloadDataM = downloadData.map((d) => {
+    const onChangeInp = (e) => {
+      d.getValue = e.target.value
+    }
+    return (
+      <div className={styles.inps__1} key={d.id}>
+        {d.component}
+        <input type={d.type || 'text'} inputMode={d.type} placeholder={d.placeholder} onChange={onChangeInp} />
+      </div>
+    )
+  })
+  const getValues = ()=>{
+    console.log(downloadData[0].getValue)
+    console.log(downloadData[1].getValue)
   }
+
   return (
-    <div className={styles.inps__1} key={d.id}>
-      {d.component}
-      <input placeholder={d.placeholder} onChange={onChangeInp} />
-    </div>
+    <>
+      {downloadDataM}
+      <div onClick={getValues} className={styles.btn}>Отправить</div>
+    </>
   )
-})
+}
 
 // endSection
 const endSectionData = [
