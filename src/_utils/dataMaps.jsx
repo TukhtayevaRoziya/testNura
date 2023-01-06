@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useDispatch } from 'react-redux'
 import {
   AiOutlineHome,
   AiOutlineInstagram,
@@ -13,6 +14,7 @@ import { FiUser } from 'react-icons/fi'
 import { GiSofa } from 'react-icons/gi'
 import { FaMap } from 'react-icons/fa'
 import { TiLeaf } from 'react-icons/ti'
+import { notification, Space } from 'antd'
 
 import i1 from '../assets/bank.webp'
 import i2 from '../assets/0.webp'
@@ -25,11 +27,12 @@ import t_i3 from '../assets/technical3.webp'
 import t_i4 from '../assets/technical4.webp'
 import t_i5 from '../assets/technical5.webp'
 import t_i6 from '../assets/technical6.webp'
+import NotificationSound from './notification.mp3'
 
-import styles from './dataMap.module.css'
 import { createAction } from './../components/redux/api'
 import { CREATE_USER } from '../components/redux/sendReducer'
-import { useDispatch } from 'react-redux'
+
+import styles from './dataMap.module.css'
 
 // City
 const cityData = [
@@ -103,10 +106,22 @@ export const DownloadDataMap = () => {
           inputMode={d.type}
           placeholder={d.placeholder}
           onChange={onChangeInp}
+          defaultValue={d.getValue}
         />
       </div>
     )
   })
+  const [api, contextHolder] = notification.useNotification()
+  const audioPlayer = useRef(null)
+
+  const openNotification = (placement) => {
+    api.success({
+      message: `Your mess`,
+      description:
+        'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+      placement,
+    })
+  }
   const dispatch = useDispatch()
 
   const getValues = () => {
@@ -114,16 +129,25 @@ export const DownloadDataMap = () => {
       name: downloadData[0].getValue,
       tel: downloadData[1].getValue,
     }
+    downloadData[0].getValue = ''
+    downloadData[1].getValue = ''
     dispatch(createAction('/', CREATE_USER, data))
-    console.log(data)
+    audioPlayer.current.play()
+    setTimeout(() => {
+      openNotification('bottomLeft')
+    }, 300)
   }
 
   return (
     <>
       {downloadDataM}
-      <div onClick={getValues} className={styles.btn}>
-        Отправить
-      </div>
+      {contextHolder}
+      <audio ref={audioPlayer} src={NotificationSound} />
+      <Space>
+        <div onClick={getValues} className={styles.btn}>
+          Отправить
+        </div>
+      </Space>
     </>
   )
 }
