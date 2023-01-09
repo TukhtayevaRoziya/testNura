@@ -107,6 +107,9 @@ export const DownloadDataMap = () => {
           placeholder={d.placeholder}
           onChange={onChangeInp}
           defaultValue={d.getValue}
+          data-tilda-mask="+7 (999) 999-9999"
+          data-tilda-rule="phone"
+          data-tilda-req="1"
         />
       </div>
     )
@@ -135,7 +138,7 @@ export const DownloadDataMap = () => {
     audioPlayer.current.play()
     setTimeout(() => {
       openNotification('bottomLeft')
-    }, 300)
+    }, 400)
   }
 
   return (
