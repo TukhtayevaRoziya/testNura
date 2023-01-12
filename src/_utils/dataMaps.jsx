@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {
   AiOutlineHome,
@@ -33,6 +33,7 @@ import { createAction } from './../components/redux/api'
 import { CREATE_USER } from '../components/redux/sendReducer'
 
 import styles from './dataMap.module.css'
+import { Navigate, redirect, Route, Routes } from 'react-router-dom'
 
 // City
 const cityData = [
@@ -80,13 +81,11 @@ export const downloadData = [
     id: 0,
     component: <FiUser />,
     placeholder: 'Ваше имя',
-    getValue: '',
   },
   {
     id: 1,
     component: <BsTelephone />,
     placeholder: 'Номер телефона',
-    getValue: '',
     type: 'tel',
   },
 ]
@@ -94,9 +93,12 @@ export const downloadData = [
 // eslint-disable-next-line no-unused-vars
 
 export const DownloadDataMap = () => {
+  const [change, setChange] = useState('')
+  const [number, setNumber] = useState()
   const downloadDataM = downloadData.map((d) => {
     const onChangeInp = (e) => {
-      d.getValue = e.target.value
+      if (d.id == 0) setChange(e.target.value)
+      else setNumber(e.target.value)
     }
     return (
       <div className={styles.inps__1} key={d.id}>
@@ -106,7 +108,7 @@ export const DownloadDataMap = () => {
           inputMode={d.type}
           placeholder={d.placeholder}
           onChange={onChangeInp}
-          defaultValue={d.getValue}
+          value={d.id == 0 ? change : number}
           data-tilda-mask="+7 (999) 999-9999"
           data-tilda-rule="phone"
           data-tilda-req="1"
@@ -119,9 +121,9 @@ export const DownloadDataMap = () => {
 
   const openNotification = (placement) => {
     api.success({
-      message: `Your mess`,
+      message: `Отправлено успешно`,
       description:
-        'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+        'Уважаемый клиент, Спасибо за ваш запрос. Планирование, калькуляция, инфраструктура. Файл загрузится через 7 секунд.',
       placement,
     })
   }
@@ -129,20 +131,33 @@ export const DownloadDataMap = () => {
 
   const getValues = () => {
     const data = {
-      name: downloadData[0].getValue,
-      tel: downloadData[1].getValue,
+      name: change,
+      tel: number,
     }
-    downloadData[0].getValue = ''
-    downloadData[1].getValue = ''
+
     dispatch(createAction('/', CREATE_USER, data))
     audioPlayer.current.play()
     setTimeout(() => {
       openNotification('bottomLeft')
     }, 400)
+    setTimeout(() => {
+      setChange('')
+      setNumber('')
+      return <Navigate to="/redirect345" replace={true} />
+    }, 7000)
   }
 
   return (
     <>
+      <Routes>
+        <Route
+          path="/redirect"
+          component={() => {
+            window.location.href = 'https://drive.google.com/file/d/1USMYL1iwQkEy0hjPH4QSpJTtgGuFtIoQ/view'
+            return null
+          }}
+        />
+      </Routes>
       {downloadDataM}
       {contextHolder}
       <audio ref={audioPlayer} src={NotificationSound} />

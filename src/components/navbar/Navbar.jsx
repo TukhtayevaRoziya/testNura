@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { BsWhatsapp } from 'react-icons/bs'
 
-import { navbarData } from '../../_utils/dataMaps'
+import { DownloadDataMap, navbarData } from '../../_utils/dataMaps'
 
 import logo from '../../assets/logo.webp'
+import book from '../../assets/header_book.png'
 
 import './Navbar.css'
 
@@ -45,7 +46,14 @@ const Navbar = () => {
                 >
                   +7 (747) 094-53-09
                 </a>
-                <h6> <div> <strong></strong></div> Сейчас работаем</h6>
+                <h6>
+                  {' '}
+                  <div>
+                    {' '}
+                    <strong></strong>
+                  </div>{' '}
+                  Сейчас работаем
+                </h6>
               </div>
 
               <a
@@ -76,30 +84,26 @@ const Navbar = () => {
         </label>
       </nav>
       <div className="backgroundText">
-        {/* <div className="backgroundText__1">
-          <h1>Элитный коттеджный городок в г. Нур-Султан</h1>
-          <a href="/#pres">Скачать презентацию</a>
-          <h2>36 коттеджей</h2>
-          <div className="backgroundText__endText">
-            <h3>3</h3>
-            <p className="backgroundText__endText__1">
-              коттеджа 368 м2 на 10 сотках
+        <div className="backgroundText__1">
+          <h3>Жилой комплекс</h3>
+          <h1>Nura Elite</h1>
+          <h2>В гармонии с природой</h2>
+        </div>
+      </div>
+      <div className="last_block">
+        <div className="last_block__title">
+          <div>
+            <h1>Скачайте PDF-презентацию комплекса</h1>
+            <p>
+              Планировки, стоимость, инфраструктура. Заполните форму и скачайте
+              файл за 7 секунд.
             </p>
-
-            <h3>33</h3>
-            <p>коттеджа 179 м2 на 5 сотках</p>
           </div>
-        </div> */}
-        {/* <h5 className="backgroundText__2">
-          <strong>Строительные работы </strong>
-          начались в сентября 2021 года.
-          <br /> <br />
-          <strong>Срок сдачи </strong>
-          коттеджей - I квартал 2022 года
-          <br /> <br />
-          <strong>Срок сдачи </strong>
-          всего коттеджного городка - II квартал 2022 года
-        </h5> */}
+          <img src={book} alt="" />
+        </div>
+        <div className="last_block__inp">
+          <DownloadDataMap />
+        </div>
       </div>
     </div>
   )
