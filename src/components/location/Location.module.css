@@ -34,6 +34,7 @@
   }
   .body {
     flex-direction: column;
+    -ms-flex-direction: column;
     margin: 0;
     background-image: none;
     text-align: center;

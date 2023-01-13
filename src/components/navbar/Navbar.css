@@ -121,6 +121,13 @@
   color: #5ad946;
 }
 
+@media screen and (max-width: 1100.9px) {
+  .last_block__inp .dataMap_btn__4dprM{
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     top: 0;
@@ -321,6 +328,16 @@ z-index: 10;
   width: 45%;
   float: left;
 }
+
+@media (min-width: 1001px) and (max-width: 1300.9px) {
+  .last_block{
+    width: 90%;
+  }
+  .last_block__title img{
+    margin-top: -150px;
+  }
+}
+
 @media screen and (max-width: 1000.9px) {
   .container .links.left {
     left: 100% !important;
@@ -341,6 +358,7 @@ z-index: 10;
   .links_list__wrapper {
     justify-content: center;
     flex-direction: column;
+    -ms-flex-direction: column
   }
   .container .links {
     float: none;
@@ -353,6 +371,7 @@ z-index: 10;
     width: auto;
     height: auto;
     flex-direction: column;
+    -ms-flex-direction: column;
     align-items: flex-start;
     padding: 0 0 0 60px;
     background-color: rgba(0, 0, 0, 0.568);
@@ -411,6 +430,7 @@ z-index: 10;
   .backgroundText {
     padding: 2vh 0 0;
     flex-direction: column;
+    -ms-flex-direction: column
   }
   .backgroundText__1,
   .backgroundText__2 {
@@ -468,6 +488,6 @@ z-index: 10;
     width: 30%;
   }
   .backgroundText h3 {
-    font-size: 100px;
+    font-size: 21px;
   }
 }

@@ -33,7 +33,7 @@ import { createAction } from './../components/redux/api'
 import { CREATE_USER } from '../components/redux/sendReducer'
 
 import styles from './dataMap.module.css'
-import { Navigate, redirect, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 
 // City
 const cityData = [
@@ -97,7 +97,7 @@ export const DownloadDataMap = () => {
   const [number, setNumber] = useState()
   const downloadDataM = downloadData.map((d) => {
     const onChangeInp = (e) => {
-      if (d.id == 0) setChange(e.target.value)
+      if (d.id === 0) setChange(e.target.value)
       else setNumber(e.target.value)
     }
     return (
@@ -108,7 +108,7 @@ export const DownloadDataMap = () => {
           inputMode={d.type}
           placeholder={d.placeholder}
           onChange={onChangeInp}
-          value={d.id == 0 ? change : number}
+          value={d.id === 0 ? change : number}
           data-tilda-mask="+7 (999) 999-9999"
           data-tilda-rule="phone"
           data-tilda-req="1"
@@ -143,7 +143,6 @@ export const DownloadDataMap = () => {
     setTimeout(() => {
       setChange('')
       setNumber('')
-      return <Navigate to="/redirect345" replace={true} />
     }, 7000)
   }
 
@@ -151,7 +150,7 @@ export const DownloadDataMap = () => {
     <>
       <Routes>
         <Route
-          path="/redirect"
+          path="redirect"
           component={() => {
             window.location.href = 'https://drive.google.com/file/d/1USMYL1iwQkEy0hjPH4QSpJTtgGuFtIoQ/view'
             return null
