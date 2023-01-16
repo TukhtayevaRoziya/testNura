@@ -1,1 +1,30 @@
-body{overflow-x: hidden;margin:0;padding:0;font-family:"Fira Sans",sans-serif}:root{--main-color-dark-blue:#2e363e;--main-color-dark-gray:#333}::-webkit-scrollbar-thumb {background: linear-gradient(180deg,#ffffff,#842231);border-radius: 3px;}::-webkit-scrollbar {background-color: #fff;height: 10px;width: 8px;}
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: 'Fira Sans', sans-serif;
+}
+:root {
+  --main-color-dark-blue: #2e363e;
+  --main-color-dark-gray: #333;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffffff, #842231);
+  border-radius: 3px;
+}
+::-webkit-scrollbar {
+  background-color: #fff;
+  height: 10px;
+  width: 8px;
+}
+
+.ant-space.css-dev-only-do-not-override-k83k30.ant-space-horizontal.ant-space-align-center {
+  width: 25%;
+}
+
+@media screen and (max-width: 1000.9px) {
+  .ant-space-item,
+  .ant-space.css-dev-only-do-not-override-k83k30.ant-space-horizontal.ant-space-align-center {
+    width: 100%;
+  }
+}
