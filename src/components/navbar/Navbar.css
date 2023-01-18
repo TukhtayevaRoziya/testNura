@@ -492,7 +492,7 @@
     align-items: center;
   }
   .last_block__inp div {
-    width: 85%;
+    width: 90%;
   }
   .ant-space.css-dev-only-do-not-override-k83k30.ant-space-horizontal.ant-space-align-center {
     width: 90%;
@@ -562,4 +562,12 @@
   .ant-space.css-dev-only-do-not-override-k83k30.ant-space-horizontal.ant-space-align-center{
     width: 97%;
   }
+}
+
+@media (min-width:1001px) and (max-width: 1130px) {
+  .last_block__inp div {
+    width: 33%;
+    display: flex;
+    align-items: center;
+}
 }

@@ -93,6 +93,7 @@
 @media (min-width: 1001px) and (max-width: 1400px) {
   .body {
     padding: 1rem 0 4rem 4rem;
+    margin-top: 8rem;
   }
   .body__1 {
     width: 45%;

@@ -103,6 +103,7 @@
 }
 .inps__1 input {
   margin-left: 0.5rem;
+  width: 90%;
 }
 .inps__1 input,
 .inps__1 {
@@ -217,6 +218,7 @@
 @media screen and (max-width: 1100.9px) {
   .inps__1 {
     margin-bottom: 1rem;
+    width: 90%;
   }
   .btn {
     padding: 1.5rem 0;
@@ -226,5 +228,10 @@
 @media (min-width: 630px) and (max-width: 1000.9px) {
   .inps__1{
     width: 47.5%;
+    margin-bottom: 1rem;
+    font-size: 13px;
+  }
+  .inps__1{
+    width: 100%;
   }
 }

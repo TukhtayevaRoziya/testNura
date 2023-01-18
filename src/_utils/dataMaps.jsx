@@ -33,7 +33,6 @@ import { createAction } from './../components/redux/api'
 import { CREATE_USER } from '../components/redux/sendReducer'
 
 import styles from './dataMap.module.css'
-import { Route, Routes } from 'react-router-dom'
 
 // City
 const cityData = [
@@ -87,18 +86,29 @@ export const downloadData = [
     component: <BsTelephone />,
     placeholder: 'Номер телефона',
     type: 'tel',
+    pattern: '([0-9]{2})-[0-9]{3}-[0-9]{2}-[0-9]{2}',
   },
 ]
 
 // eslint-disable-next-line no-unused-vars
 
 export const DownloadDataMap = () => {
-  const [change, setChange] = useState('')
-  const [number, setNumber] = useState()
+  const [name, setName] = useState('')
+  const [phoneNum, setPhoneNum] = useState(new Array(17))
   const downloadDataM = downloadData.map((d) => {
     const onChangeInp = (e) => {
-      if (d.id === 0) setChange(e.target.value)
-      else setNumber(e.target.value)
+      if (d.id === 0) setName(e.target.value)
+      else {
+        if (phoneNum.length === 6) {
+          setPhoneNum(e.target.value + ' ')
+        } else if (phoneNum.length === 10) {
+          setPhoneNum(e.target.value + '-')
+        } else if (phoneNum.length === 13) {
+          setPhoneNum(e.target.value + '-')
+        } else {
+          setPhoneNum(e.target.value)
+        }
+      }
     }
     return (
       <div className={styles.inps__1} key={d.id}>
@@ -108,10 +118,9 @@ export const DownloadDataMap = () => {
           inputMode={d.type}
           placeholder={d.placeholder}
           onChange={onChangeInp}
-          value={d.id === 0 ? change : number}
-          data-tilda-mask="+7 (999) 999-9999"
-          data-tilda-rule="phone"
-          data-tilda-req="1"
+          value={d.id === 0 ? name : phoneNum}
+          pattern={d.pattern}
+          maxLength="17"
         />
       </div>
     )
@@ -119,46 +128,47 @@ export const DownloadDataMap = () => {
   const [api, contextHolder] = notification.useNotification()
   const audioPlayer = useRef(null)
 
-  const openNotification = (placement) => {
-    api.success({
-      message: `Отправлено успешно`,
-      description:
-        'Уважаемый клиент, Спасибо за ваш запрос. Планирование, калькуляция, инфраструктура. Файл загрузится через 7 секунд.',
-      placement,
-    })
+  const openNotification = (placement, condition) => {
+    condition === 1
+      ? api.success({
+          message: `Отправлено успешно`,
+          description:
+            'Уважаемый клиент, Спасибо за ваш запрос. Планирование, калькуляция, инфраструктура. Файл загрузится через 7 секунд.',
+          placement,
+        })
+      : api.error({
+          message: `Отправлено успешно`,
+          description:
+            'Уважаемый клиент, Спасибо за ваш запрос. Планирование, калькуляция, инфраструктура. Файл загрузится через 7 секунд.',
+          placement,
+        })
   }
   const dispatch = useDispatch()
 
   const getValues = () => {
-    const data = {
-      name: change,
-      tel: number,
+    if (!name || !phoneNum) {
+      openNotification('bottomLeft', 0)
+    } else {
+      const data = {
+        name: name,
+        tel: phoneNum,
+      }
+      setName('')
+      setPhoneNum('+998')
+      dispatch(createAction('/', CREATE_USER, data))
+      audioPlayer.current.play()
+      setTimeout(() => {
+        openNotification('bottomLeft', 1)
+      }, 400)
     }
-
-    dispatch(createAction('/', CREATE_USER, data))
-    audioPlayer.current.play()
-    setTimeout(() => {
-      openNotification('bottomLeft')
-    }, 400)
-    setTimeout(() => {
-      setChange('')
-      setNumber('')
-    }, 7000)
   }
 
   return (
     <>
-      <Routes>
-        <Route
-          path="redirect"
-          component={() => {
-            window.location.href = 'https://drive.google.com/file/d/1USMYL1iwQkEy0hjPH4QSpJTtgGuFtIoQ/view'
-            return null
-          }}
-        />
-      </Routes>
       {downloadDataM}
       {contextHolder}
+      {/* <PhoneInput value={phoneNum} onChange={setPhoneNum} displayInitialValueAsLocalNumber
+  defaultCountry="UZ" /> */}
       <audio ref={audioPlayer} src={NotificationSound} />
       <Space>
         <div onClick={getValues} className={styles.btn}>
@@ -171,14 +181,16 @@ export const DownloadDataMap = () => {
 
 // endSection
 const endSectionData = [
-  { id: 0, title: 'Преимущества', link:'advantages' },
-  { id: 1, title: 'Почему мы?', link:'whyWe' },
-  { id: 2, title: 'Технологии', link:'technology' },
-  { id: 3, title: 'Способы оплаты', link:'paymentMethods' },
+  { id: 0, title: 'Преимущества', link: 'advantages' },
+  { id: 1, title: 'Почему мы?', link: 'whyWe' },
+  { id: 2, title: 'Технологии', link: 'technology' },
+  { id: 3, title: 'Способы оплаты', link: 'paymentMethods' },
 ]
 
 export const endSectionDataMap = endSectionData.map((e) => (
-  <a href={'#' + e.link} key={e.id}>{e.title}</a>
+  <a href={'#' + e.link} key={e.id}>
+    {e.title}
+  </a>
 ))
 
 // map
