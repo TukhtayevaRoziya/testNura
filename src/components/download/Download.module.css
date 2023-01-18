@@ -27,7 +27,7 @@
 .inps {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
   margin: 2rem auto 0;
 }
 
@@ -59,4 +59,14 @@
     width: 100%;
     flex-direction: row;
   }
+}
+
+@media (min-width:630px) and (max-width: 1100.9px) {
+  .inps{
+    flex-wrap: wrap;
+    flex-direction: inherit;
+    -ms-flex-direction: inherit;
+    justify-content: space-around;
+  }
+  
 }

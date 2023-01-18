@@ -98,6 +98,8 @@
   background: #f2f6fa;
   border-radius: 8px;
   color: #7e868e;
+  width: 30%;
+  box-sizing: border-box;
 }
 .inps__1 input {
   margin-left: 0.5rem;
@@ -218,5 +220,11 @@
   }
   .btn {
     padding: 1.5rem 0;
+  }
+}
+
+@media (min-width: 630px) and (max-width: 1000.9px) {
+  .inps__1{
+    width: 47.5%;
   }
 }

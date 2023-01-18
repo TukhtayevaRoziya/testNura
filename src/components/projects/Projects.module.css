@@ -55,6 +55,8 @@
     -ms-flex-direction: column;
     padding: 0;
     margin-top: 1rem;
+    background-size: 95%;
+    background-position: top right;
   }
   .body__1 {
     width: 80%;

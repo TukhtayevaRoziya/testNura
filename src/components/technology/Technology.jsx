@@ -6,7 +6,7 @@ import styles from './Technology.module.css'
 
 const Technology = () => {
   return (
-    <div className={styles.body}>
+    <div className={styles.body} id='technology'>
       <h1>Технология строения</h1>
       <div className={styles.mapWrap}>{technologyDataMap}</div>
     </div>

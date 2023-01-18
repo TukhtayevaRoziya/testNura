@@ -171,14 +171,14 @@ export const DownloadDataMap = () => {
 
 // endSection
 const endSectionData = [
-  { id: 0, title: 'Преимущества' },
-  { id: 1, title: 'Почему мы?' },
-  { id: 2, title: 'Технологии' },
-  { id: 3, title: 'Способы оплаты' },
+  { id: 0, title: 'Преимущества', link:'advantages' },
+  { id: 1, title: 'Почему мы?', link:'whyWe' },
+  { id: 2, title: 'Технологии', link:'technology' },
+  { id: 3, title: 'Способы оплаты', link:'paymentMethods' },
 ]
 
 export const endSectionDataMap = endSectionData.map((e) => (
-  <h1 key={e.id}>{e.title}</h1>
+  <a href={'#' + e.link} key={e.id}>{e.title}</a>
 ))
 
 // map

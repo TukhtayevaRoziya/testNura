@@ -22,8 +22,11 @@ body {
   width: 25%;
 }
 
+.ant-space-item {
+  width: 100%;
+}
+
 @media screen and (max-width: 1000.9px) {
-  .ant-space-item,
   .ant-space.css-dev-only-do-not-override-k83k30.ant-space-horizontal.ant-space-align-center {
     width: 100%;
   }
