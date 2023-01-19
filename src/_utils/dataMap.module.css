@@ -98,8 +98,10 @@
   background: #f2f6fa;
   border-radius: 8px;
   color: #7e868e;
-  width: 30%;
+  width: 33%;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 .inps__1 input {
   margin-left: 0.5rem;
@@ -128,6 +130,8 @@
   justify-content: center;
   padding: 24px 4rem;
   cursor: pointer;
+  border: none;
+  width: 100%;
 }
 
 @media screen and (max-width: 700.9px) {
@@ -222,6 +226,8 @@
   }
   .btn {
     padding: 1.5rem 0;
+    width: 100%;
+
   }
 }
 

@@ -126,6 +126,10 @@
     width: 100% !important;
     margin-bottom: 1rem;
   }
+  .last_block__inp form{
+    width: 100% !important;
+
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -323,12 +327,16 @@
   display: flex;
   align-items: center;
 }
+.last_block__inp .PhoneInput {
+  width: 100%;
+}
 .last_block__inp .ant-space-item {
   width: 100%;
 }
 .last_block__inp .dataMap_btn__4dprM {
-  width: 45%;
+  width: 100%;
   float: left;
+  border: none;
 }
 
 @media (min-width: 1001px) and (max-width: 1300.9px) {

@@ -1,3 +1,4 @@
+// eslint-disable-next-line jsx-a11y/anchor-has-content
 import React, { useRef, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {
@@ -95,6 +96,11 @@ export const downloadData = [
 export const DownloadDataMap = () => {
   const [name, setName] = useState('')
   const [phoneNum, setPhoneNum] = useState('+998')
+
+  const [api, contextHolder] = notification.useNotification()
+  const audioPlayer = useRef(null)
+  const dispatch = useDispatch()
+
   const downloadDataM = downloadData.map((d) => {
     const onChangeInp = (e) => {
       if (d.id === 0) setName(e.target.value)
@@ -116,7 +122,6 @@ export const DownloadDataMap = () => {
             limitMaxLength="16"
             placeholder={d.placeholder}
             international
-
             countryCallingCodeEditable={false}
             value={phoneNum}
             onChange={setPhoneNum}
@@ -125,30 +130,26 @@ export const DownloadDataMap = () => {
       </div>
     )
   })
-  const [api, contextHolder] = notification.useNotification()
-  const audioPlayer = useRef(null)
 
   const openNotification = (placement, condition) => {
     condition === 1
       ? api.success({
           message: `Отправлено успешно`,
           description:
-            'Уважаемый клиент, Спасибо за ваш запрос. Планирование, калькуляция, инфраструктура. Файл загрузится через 7 секунд.',
+            'Уважаемый клиент, Спасибо за ваш запрос. Планирование, калькуляция, инфраструктура. Файл загрузится!',
           placement,
         })
       : api.error({
-          message: `Отправлено успешно`,
+          message: `Пожалуйста, заполните все обязательные поля`,
           description:
-            'Уважаемый клиент, Спасибо за ваш запрос. Планирование, калькуляция, инфраструктура. Файл загрузится через 7 секунд.',
+            'Заполните форму и получите презентацию о жилом комплексе в формате PDF.',
           placement,
         })
   }
-  const dispatch = useDispatch()
 
   const getValues = () => {
-    if (!name || !phoneNum) {
-      openNotification('bottomLeft', 0)
-    } else {
+    console.log(window.location.href)
+    if (name && phoneNum) {
       const data = {
         name: name,
         tel: phoneNum,
@@ -160,6 +161,11 @@ export const DownloadDataMap = () => {
       setTimeout(() => {
         openNotification('bottomLeft', 1)
       }, 400)
+      setTimeout(() => {
+        window.location.href='https://drive.google.com/file/d/1USMYL1iwQkEy0hjPH4QSpJTtgGuFtIoQ/view'
+      }, 1000)
+    } else {
+      openNotification('bottomLeft', 0)
     }
   }
 
@@ -167,13 +173,14 @@ export const DownloadDataMap = () => {
     <>
       {downloadDataM}
       {contextHolder}
-      {/* <PhoneInput value={phoneNum} onChange={setPhoneNum} displayInitialValueAsLocalNumber
-  defaultCountry="UZ" /> */}
       <audio ref={audioPlayer} src={NotificationSound} />
       <Space>
-        <div onClick={getValues} className={styles.btn}>
-          Отправить
-        </div>
+        <input
+          type="submit"
+          value="Отправить"
+          onClick={getValues}
+          className={styles.btn}
+        />
       </Space>
     </>
   )
