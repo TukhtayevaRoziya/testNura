@@ -320,6 +320,8 @@
 }
 .last_block__inp div {
   width: 30%;
+  display: flex;
+  align-items: center;
 }
 .last_block__inp .ant-space-item {
   width: 100%;

@@ -26,6 +26,10 @@ body {
   width: 100%;
 }
 
+.PhoneInputCountry {
+  display: none !important;
+}
+
 @media screen and (max-width: 1000.9px) {
   .ant-space.css-dev-only-do-not-override-k83k30.ant-space-horizontal.ant-space-align-center {
     width: 100%;

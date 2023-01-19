@@ -9,7 +9,9 @@ import Download from './components/download/Download'
 import Technology from './components/technology/Technology'
 import EndSection from './components/endSection/EndSection'
 
+
 const App = () => {
+
   return (
     <div className="App">
       <Navbar />

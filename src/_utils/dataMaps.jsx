@@ -15,6 +15,8 @@ import { GiSofa } from 'react-icons/gi'
 import { FaMap } from 'react-icons/fa'
 import { TiLeaf } from 'react-icons/ti'
 import { notification, Space } from 'antd'
+import PhoneInput from 'react-phone-number-input'
+import 'react-phone-number-input/style.css'
 
 import i1 from '../assets/bank.webp'
 import i2 from '../assets/0.webp'
@@ -85,8 +87,6 @@ export const downloadData = [
     id: 1,
     component: <BsTelephone />,
     placeholder: 'Номер телефона',
-    type: 'tel',
-    pattern: '([0-9]{2})-[0-9]{3}-[0-9]{2}-[0-9]{2}',
   },
 ]
 
@@ -94,34 +94,34 @@ export const downloadData = [
 
 export const DownloadDataMap = () => {
   const [name, setName] = useState('')
-  const [phoneNum, setPhoneNum] = useState(new Array(17))
+  const [phoneNum, setPhoneNum] = useState('+998')
   const downloadDataM = downloadData.map((d) => {
     const onChangeInp = (e) => {
       if (d.id === 0) setName(e.target.value)
-      else {
-        if (phoneNum.length === 6) {
-          setPhoneNum(e.target.value + ' ')
-        } else if (phoneNum.length === 10) {
-          setPhoneNum(e.target.value + '-')
-        } else if (phoneNum.length === 13) {
-          setPhoneNum(e.target.value + '-')
-        } else {
-          setPhoneNum(e.target.value)
-        }
-      }
+      else setPhoneNum(e.target.value)
     }
     return (
       <div className={styles.inps__1} key={d.id}>
         {d.component}
-        <input
-          type={d.type || 'text'}
-          inputMode={d.type}
-          placeholder={d.placeholder}
-          onChange={onChangeInp}
-          value={d.id === 0 ? name : phoneNum}
-          pattern={d.pattern}
-          maxLength="17"
-        />
+        {d.id === 0 ? (
+          <input
+            type={'text'}
+            placeholder={d.placeholder}
+            onChange={onChangeInp}
+            value={name}
+          />
+        ) : (
+          <PhoneInput
+            defaultCountry="UZ"
+            limitMaxLength="16"
+            placeholder={d.placeholder}
+            international
+
+            countryCallingCodeEditable={false}
+            value={phoneNum}
+            onChange={setPhoneNum}
+          />
+        )}
       </div>
     )
   })
