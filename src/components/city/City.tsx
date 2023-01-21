@@ -1,9 +1,9 @@
 import React from 'react'
 import { TbBuildingCommunity } from 'react-icons/tb'
 import { cityDataMap, cityDataMap2 } from '../../_utils/dataMaps'
-
+// @ts-ignore
 import city from '../../assets/city.webp'
-
+// @ts-ignore
 import styles from './City.module.css'
 
 const City = () => {

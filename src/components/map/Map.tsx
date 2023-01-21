@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { mapDataMap } from '../../_utils/dataMaps'
-import Yandex from './Yendex'
+import Yandex from './Yandex'
 
 import img from '../../assets/qr.webp'
 

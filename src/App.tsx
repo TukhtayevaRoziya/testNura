@@ -1,3 +1,4 @@
+import React from 'react'
 import Map from './components/map/Map'
 import City from './components/city/City'
 import WhyWe from './components/whywe/WhyWe'
@@ -8,7 +9,6 @@ import Location from './components/location/Location'
 import Download from './components/download/Download'
 import Technology from './components/technology/Technology'
 import EndSection from './components/endSection/EndSection'
-
 
 const App = () => {
 

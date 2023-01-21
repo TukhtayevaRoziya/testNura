@@ -1,6 +1,5 @@
 // eslint-disable-next-line jsx-a11y/anchor-has-content
 import React, { useRef, useState } from 'react'
-import { useDispatch } from 'react-redux'
 import {
   AiOutlineHome,
   AiOutlineInstagram,
@@ -36,6 +35,8 @@ import { createAction } from './../components/redux/api'
 import { CREATE_USER } from '../components/redux/sendReducer'
 
 import styles from './dataMap.module.css'
+import { NotificationPlacement } from 'antd/es/notification/interface'
+import { dispatchStore } from '../components/redux/store'
 
 // City
 const cityData = [
@@ -98,11 +99,10 @@ export const DownloadDataMap = () => {
   const [phoneNum, setPhoneNum] = useState('+998')
 
   const [api, contextHolder] = notification.useNotification()
-  const audioPlayer = useRef(null)
-  const dispatch = useDispatch()
+  const audioPlayer = useRef<HTMLAudioElement>(null);
 
   const downloadDataM = downloadData.map((d) => {
-    const onChangeInp = (e) => {
+    const onChangeInp = (e: any) => {
       if (d.id === 0) setName(e.target.value)
       else setPhoneNum(e.target.value)
     }
@@ -119,19 +119,20 @@ export const DownloadDataMap = () => {
         ) : (
           <PhoneInput
             defaultCountry="UZ"
-            limitMaxLength="16"
+            limitMaxLength={true}
             placeholder={d.placeholder}
             international
             countryCallingCodeEditable={false}
             value={phoneNum}
-            onChange={setPhoneNum}
+            // @ts-ignore
+            onChange={(string) => setPhoneNum([...string])}
           />
         )}
       </div>
     )
   })
 
-  const openNotification = (placement, condition) => {
+  const openNotification = (placement:NotificationPlacement, condition: number) => {
     condition === 1
       ? api.success({
           message: `Отправлено успешно`,
@@ -156,8 +157,8 @@ export const DownloadDataMap = () => {
       }
       setName('')
       setPhoneNum('+998')
-      dispatch(createAction('/', CREATE_USER, data))
-      audioPlayer.current.play()
+      dispatchStore(createAction('/', CREATE_USER, data));
+      audioPlayer.current && audioPlayer.current.play()
       setTimeout(() => {
         openNotification('bottomLeft', 1)
       }, 400)

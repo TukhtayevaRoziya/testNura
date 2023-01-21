@@ -6,7 +6,7 @@ const initialState = {
   data: []
 };
 
-const sendReducer = (state = initialState, action) => {
+const sendReducer = (state = initialState, action: { type: string; payload: object; }) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -26,10 +26,6 @@ const appReducer = combineReducers({
   sendReducer
 });
 
-export const rootReducer = (state, action) => {
-  if (action.type === "LOGOUT") {
-    state = undefined;
-  }
-
+export const rootReducer = (state: any, action: { type: string; payload: object; }) => {
   return appReducer(state, action);
 };

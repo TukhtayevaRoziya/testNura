@@ -8,7 +8,7 @@ const images = [...Array(26)].map((n, i) => {
   return `https://img.icons8.com/ios-filled/2x/marker-${letter}.png`;
 });
 
-const Yandex = (props) => (
+const Yandex = () => (
   <YMaps query={{ load: "package.full" }}>
     <Map
       state={{

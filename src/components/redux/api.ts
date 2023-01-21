@@ -1,3 +1,4 @@
+import { AnyAction, ThunkDispatch } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const api = axios.create({
@@ -9,8 +10,8 @@ const api = axios.create({
 
 export default api;
 
-export const createAction = (path, actionType, formData) => async (
-  dispatch,
+export const createAction = (path: string, actionType: string, formData: object) => async (
+  dispatch: ThunkDispatch<{}, {}, AnyAction>,
 ) => {
   try {
     const res = await api.post(path, formData)
