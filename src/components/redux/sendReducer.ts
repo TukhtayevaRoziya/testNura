@@ -1,8 +1,11 @@
+// @ts-ignore
 import { combineReducers } from "redux";
 
 export const CREATE_USER = "CREATE_USER";
 
 const initialState = {
+// @ts-ignore
+
   data: []
 };
 
