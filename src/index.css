@@ -3,13 +3,14 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Fira Sans', sans-serif;
+  background-color: #f8f6f7;
 }
 :root {
   --main-color-dark-blue: #2e363e;
   --main-color-dark-gray: #333;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #ffffff, #842231);
+  background: linear-gradient(180deg, #ffffff, #d63838);
   border-radius: 3px;
 }
 ::-webkit-scrollbar {

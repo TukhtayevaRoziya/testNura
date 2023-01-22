@@ -1,5 +1,5 @@
 import React from "react";
-import img from '../../assets/location.webp'
+import img from '../../assets/location.jpg'
 
 import styles from "./Location.module.css";
 

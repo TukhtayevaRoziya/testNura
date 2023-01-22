@@ -126,9 +126,8 @@
     width: 100% !important;
     margin-bottom: 1rem;
   }
-  .last_block__inp form{
+  .last_block__inp form {
     width: 100% !important;
-
   }
 }
 
@@ -321,6 +320,7 @@
 .last_block__inp {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .last_block__inp div {
   width: 30%;
@@ -339,6 +339,21 @@
   border: none;
 }
 
+.last_block__inp p {
+  font-size: 13px;
+  text-align: left;
+  color: #102f4b;
+  font-weight: 400;
+  font-family: Montserrat;
+  width: 90%;
+  margin: 1rem auto
+}
+
+.last_block__inp p a {
+  text-decoration: none;
+  color: #1155cc !important;
+}
+
 @media (min-width: 1001px) and (max-width: 1300.9px) {
   .last_block {
     width: 90%;
@@ -353,7 +368,8 @@
     left: 100% !important;
   }
   .myNavbar {
-    height: auto;
+    height: 80vh;
+    background-position: top center;
     padding-bottom: 1rem;
   }
   .container .logo {
@@ -450,7 +466,7 @@
     text-align: center;
   }
   .backgroundText h1 {
-    font-size: 20px;
+    font-size: 38px;
     text-align: center;
     margin: 0.5rem 0;
   }
@@ -460,12 +476,12 @@
     font-size: 14px;
   }
   .backgroundText h2 {
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 0;
     line-height: 20px;
   }
   .backgroundText h3 {
-    font-size: 16px;
+    font-size: 15px;
   }
   .backgroundText__endText p {
     font-size: 14px;
@@ -477,16 +493,16 @@
     justify-content: center;
   }
   .last_block {
-    width: 95%;
-    margin: 6rem auto 3rem;
-    padding: 20px 30px;
+    width: 80%;
+    margin: 40% auto 3rem;
+    padding: 20px 30px 40px;
   }
   .last_block__title {
     flex-direction: column-reverse;
   }
   .last_block__title img {
     width: 100%;
-    margin-top: -100px;
+    margin-top: -50%;
   }
   .last_block__title h1 {
     text-align: center;
@@ -569,15 +585,15 @@
     flex-wrap: wrap;
     flex-direction: inherit;
   }
-  .ant-space.css-dev-only-do-not-override-k83k30.ant-space-horizontal.ant-space-align-center{
+  .ant-space.css-dev-only-do-not-override-k83k30.ant-space-horizontal.ant-space-align-center {
     width: 97%;
   }
 }
 
-@media (min-width:1001px) and (max-width: 1130px) {
+@media (min-width: 1001px) and (max-width: 1130px) {
   .last_block__inp div {
     width: 33%;
     display: flex;
     align-items: center;
-}
+  }
 }

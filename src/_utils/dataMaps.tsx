@@ -23,12 +23,10 @@ import i2 from '../assets/0.webp'
 import i3 from '../assets/company.webp'
 import i4 from '../assets/bitcoin.webp'
 
-import t_i1 from '../assets/technical1.webp'
-import t_i2 from '../assets/technical2.webp'
-import t_i3 from '../assets/technical3.webp'
-import t_i4 from '../assets/technical4.webp'
-import t_i5 from '../assets/technical5.webp'
-import t_i6 from '../assets/technical6.webp'
+import t_i1 from '../assets/build.png'
+import t_i2 from '../assets/comp.png'
+import t_i3 from '../assets/planet.png'
+import t_i4 from '../assets/map.png'
 import NotificationSound from './notification.mp3'
 
 import { createAction } from './../components/redux/api'
@@ -99,7 +97,7 @@ export const DownloadDataMap = () => {
   const [phoneNum, setPhoneNum] = useState('+998')
 
   const [api, contextHolder] = notification.useNotification()
-  const audioPlayer = useRef<HTMLAudioElement>(null);
+  const audioPlayer = useRef<HTMLAudioElement>(null)
 
   const downloadDataM = downloadData.map((d) => {
     const onChangeInp = (e: any) => {
@@ -132,7 +130,10 @@ export const DownloadDataMap = () => {
     )
   })
 
-  const openNotification = (placement:NotificationPlacement, condition: number) => {
+  const openNotification = (
+    placement: NotificationPlacement,
+    condition: number,
+  ) => {
     condition === 1
       ? api.success({
           message: `Отправлено успешно`,
@@ -157,13 +158,14 @@ export const DownloadDataMap = () => {
       }
       setName('')
       setPhoneNum('+998')
-      dispatchStore(createAction('/', CREATE_USER, data));
+      dispatchStore(createAction('/', CREATE_USER, data))
       audioPlayer.current && audioPlayer.current.play()
       setTimeout(() => {
         openNotification('bottomLeft', 1)
       }, 400)
       setTimeout(() => {
-        window.location.href='https://drive.google.com/file/d/1USMYL1iwQkEy0hjPH4QSpJTtgGuFtIoQ/view'
+        window.location.href =
+          'https://drive.google.com/file/d/1USMYL1iwQkEy0hjPH4QSpJTtgGuFtIoQ/view'
       }, 1000)
     } else {
       openNotification('bottomLeft', 0)
@@ -183,6 +185,10 @@ export const DownloadDataMap = () => {
           className={styles.btn}
         />
       </Space>
+      <p>
+        Нажимая на кнопку, вы даете согласие на обработку персональных данных и
+        соглашаетесь c <a href='/#'> Политикой конфиденциальности</a>
+      </p>
     </>
   )
 }
@@ -288,49 +294,34 @@ export const projectsDataMap = projectsData.map((d) => (
 const technologyData = [
   {
     id: 0,
-    img: t_i1,
-    title: 'Конструкция стены',
+    img: t_i4,
+    title: 'Расположение',
     text:
-      'Двойная кладка из жжённого красного кирпича - 38/40 см, утепление минеральной плитой - 10 см., и облицовка HPL и ФБЦ панелью',
+      'Новый коттеджный городок Nura Elite расположен в элитном и перспективном районе столицы, рядом с зелёным поясом по улице 38, участок №67 по соседству с Family Village. Коттеджный городок находится в окружении всей необходимой инфраструктуры таких как, продовольственные магазины, образовательные школы и детские сады.',
   },
 
   {
     id: 1,
-    img: t_i2,
-    title: 'Конструкция окна',
+    img: t_i1,
+    title: 'Архитектура',
     text:
-      'Высокая экологичность, безопасность, надёжность и долговечность, усиленная теплоизолирующая способность, которая обеспечивается пятикамерным строением профиля с тройным остеклением и шумоизоляцией (система Helios рассчитана на стеклопакеты толщиной 44 мм с воздушной прослойкой в 16 мм, проходя через которые низкочастотные шумы теряют свою интенсивность, что очень ценят жители) по технологии FUNKE',
+      'Коттеджный городок Nura Elite построен по кирпичной технологии. Состоит из 48 двухэтажных домов. Для утепления стен использована минеральная плита, для облицовки фасада – фиброцементная панель. КГ Nura Elite представлен коттеджами площадью 179м2 и 368м2, каждый из которых расположен на 5 и 10 сотках земельных участков соответственно.',
   },
 
   {
     id: 2,
-    img: t_i3,
-    title: 'Конструкция двери',
+    img: t_i2,
+    title: 'Внутренняя инфраструктура',
     text:
-      'Технология IZO TERMO. Двери не соприкасаются с наружными. Между ними расположен изолятор - щит из португальского пробкового дуба толщиной в 8 мм. IZO TERMO устраняет “мостик холода” и не дает теплу уходить из дома. С этой технологией вам не нужен тамбур и вторая дверь.',
+      'Коттеджный городок Нура Элит имеет собственную благоустроенную территорию, есть контрольно-пропускной пункт, детская и спортивная площадка, места для отдыха, проезды для авто и дорожки для пешеходов, прогулочные зоны, крытый паркинг.      ',
   },
 
   {
     id: 3,
-    img: t_i4,
-    title: 'Конструкция кровли',
+    img: t_i3,
+    title: 'Внешняя инфраструктура',
     text:
-      'Гибкая черепица ТЕХНОНИКОЛЬ SHINGLAS - это гарантия комфорта и безопасности вашего дома. Дома с кровлей из гибкой черепицы ТЕХНОНИКОЛЬ SHINGLAS очаровывают своей гармонией, изяществом. Коллекции отличаются разнообразием форм и расцветок.',
-  },
-
-  {
-    id: 4,
-    img: t_i5,
-    title: 'Конструкция Фасада',
-    text:
-      'HPL панель - это высококачественная строительная продукция для долговечной облицовки фасада. Стойкость на погодные воздействия +180 с/ -180с с высоким эффектом защиты от атмосферных воздействий. Данная защита обеспечивается за счет применения акрилополиуретановых смол с двойным отверждением. Относится к экологичным материалам.',
-  },
-  {
-    id: 5,
-    img: t_i6,
-    title: 'ФБЦ',
-    text:
-      'ФБЦ - это уникальный и высококачественный строительный материал для долговечной облицовки фасада. Высокая морозостойкость, пожаробезопасность, хорошая звуко- и теплоизоляция, герметичность, повышенная прочность, погодоустойчивость. Безопасна как для человека, так и для окружающей среды. Они не содержат асбест, состоят из экологически чистых натуральных компонентов: 82-85% цемента, древесное волокно, добавки для снижения веса, кремнийорганические соединения',
+      'Недалеко от КГ Nura Elite Астана находятся детский сад, школа №88, парк. За 10 минут можно доехать до мечети и торгово-развлекательного центра.',
   },
 ]
 

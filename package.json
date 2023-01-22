@@ -22,6 +22,7 @@
     "react-phone-number-input": "^3.2.16",
     "react-redux": "^8.0.5",
     "react-scripts": "5.0.1",
+    "react-smooth-scrolling": "^1.0.2",
     "redux": "^4.2.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",

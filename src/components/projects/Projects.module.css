@@ -45,16 +45,28 @@
 }
 .body__2 img {
   margin-bottom: 2rem;
+  box-shadow: 30px 30px 0px 0px #d63838;
+  width: 65%;
+  transition: .2s all linear;
+}
+
+.body__2 img:hover{
+  box-shadow: 25px 25px 0px 0px #d63838;
 }
 .body__2 p {
   width: 80%;
+}
+@media (min-width: 630px) and (max-width: 1000.9px) {
+  .body{
+    margin-top: 30vh !important;
+  }
 }
 @media screen and (max-width: 1000.9px) {
   .body {
     flex-direction: column;
     -ms-flex-direction: column;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 75vh;
     background-size: 95%;
     background-position: top right;
   }
@@ -74,7 +86,7 @@
     margin: 1rem auto;
   }
   .body__2 img {
-    width: 70%;
+    width: 65%;
     margin: 0 auto 1rem;
   }
   .body__1 h1 {
@@ -90,6 +102,7 @@
     width: 400px;
   }
 }
+
 @media (min-width: 1001px) and (max-width: 1400px) {
   .body {
     padding: 1rem 0 4rem 4rem;

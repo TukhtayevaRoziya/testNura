@@ -11,9 +11,8 @@ import Technology from './components/technology/Technology'
 import EndSection from './components/endSection/EndSection'
 
 const App = () => {
-
   return (
-    <div className="App">
+    <>
       <Navbar />
       <Projects />
       <Location />
@@ -24,7 +23,7 @@ const App = () => {
       <Payment />
       <Map />
       <EndSection />
-    </div>
+    </>
   )
 }
 

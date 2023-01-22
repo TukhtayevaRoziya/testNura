@@ -26,30 +26,46 @@
 /* ----------------technology---------------- */
 
 .map {
-  width: 48%;
-  margin: 2rem 0;
+  width: 49.3%;
+  margin: .5rem 0;
+  background: #fff;
+  border-radius: 10px;
+  border-color: #dfe7ed;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0px 6px 18px 0px rgb(16 47 75 / 10%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  box-sizing: border-box;
 }
 
 .map img {
   object-fit: contain;
+  width: 115px;
 }
 
 .map h2 {
   font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
+  font-weight: 600;
   line-height: 24px;
-
-  color: var(--main-color-dark-gray);
+  color: #102f4b;
+  font-size: 22px;
+  margin-bottom: .5rem;
 }
 
 .map p {
   width: 90%;
   font-style: normal;
-  font-size: 16px;
   line-height: 20px;
 
-  color: var(--main-color-dark-gray);
+  font-size: 18px !important;
+  font-family: 'Roboto',Arial,sans-serif;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+  opacity: 0.7;
+  text-align: left !important;
 }
 
 /* ----------------whyWe---------------- */
@@ -111,7 +127,7 @@
 .inps__1 {
   border: none;
   outline: none;
-  background: #f2f6fa;
+  background: #fff;
   font-style: normal;
   font-weight: 400;
   font-size: 15px;
@@ -122,7 +138,7 @@
 }
 
 .btn {
-  background: #842231;
+  background: #d63838;
   border-radius: 8px;
   color: #fff;
   display: flex;
@@ -169,23 +185,38 @@
     text-align: center;
   }
 
+  .map h2{
+    font-size: 20px;
+  }
+
   .map p {
-    width: 100%;
+    width: 90%;
+    font-size: 15px !important;
   }
 
   .map img {
-    width: 90%;
+    width: 25%;
     margin: 0 auto;
   }
 }
 
 @media (min-width: 601px) and (max-width: 1000.9px) {
   .map img {
-    width: 70%;
+    width: 30%;
+  }
+
+  .map h2{
+    font-size: 18px;
   }
 
   .map {
     text-align: center;
+    width: 80%;
+    margin: 1rem auto;
+  }
+
+  .map p{
+    font-size: 14px !important;
   }
 
   .map p,
